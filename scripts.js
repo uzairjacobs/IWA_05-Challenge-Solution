@@ -16,22 +16,18 @@ let shirts = 150 * NONE_SELECTED;
 if (country === "RSA") {
   shipping = 400;
   currency = "R";
-  if ((shoes + batteries + pens + shirts + toys) >= 1000 && customers === 1) {
-    shipping = 0;
-  } 
-} 
-  
-  else if (country === "NAM") {
-  shipping = 600;
-  currency = "$";
-  if ((shoes + batteries + pens + shirts + toys) >= 1000 && customers === 1) {
+  if (shoes + batteries + pens + shirts + toys >= 1000 && customers === 1) {
     shipping = 0;
   }
-}
-  else if (country === "NK") {
+} else if (country === "NAM") {
+  shipping = 600;
+  currency = "$";
+  if (shoes + batteries + pens + shirts + toys >= 1000 && customers === 1) {
+    shipping = 0;
+  }
+} else if (country === "NK") {
   console.log(BANNED_WARNING);
-
-  } else {
+} else {
   shipping = 800;
   currency = "$";
 }
@@ -40,7 +36,5 @@ if (customers != 1 && shipping == 0) {
   console.log(FREE_WARNING);
 }
 
-
-
-const total = shoes + batteries + toys + pens + shirts + shipping
+const total = shoes + batteries + toys + pens + shirts + shipping;
 console.log("Price:", currency + total);
